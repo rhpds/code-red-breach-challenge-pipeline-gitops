@@ -1,25 +1,25 @@
 app:
   name: customers
-  namespace: customers-{{ gitea_customize_lab_username }}
-  cluster: .{{ gitea_customize_apps_subdomain }}
-  challenge_password: "{{ gitea_customize_lab_challenge_password }}"
+  namespace: customers-{{ code_red_breach_challenge_gitea_customize_lab_username }}
+  cluster: .{{ code_red_breach_challenge_gitea_customize_apps_subdomain }}
+  challenge_password: "{{ code_red_breach_challenge_gitea_customize_lab_challenge_password }}"
 
 git:
   branch: master
-  repo: https://{{ gitea_customize_gitea_endpoint }}/gitea/{{ gitea_customize_lab_username }}-pipeline-gitops.git
+  repo: https://{{ code_red_breach_challenge_gitea_customize_gitea_endpoint }}/gitea/{{ code_red_breach_challenge_gitea_customize_lab_username }}-pipeline-gitops.git
   org: development
   name: pipeline-gitops
-  host: {{ gitea_customize_gitea_endpoint }}
+  host: {{ code_red_breach_challenge_gitea_customize_gitea_endpoint }}
   token: ''
   webhookSecret: ''
   verify_commits: disabled
 
 lab:
-  username: {{ gitea_customize_lab_username }}
+  username: {{ code_red_breach_challenge_gitea_customize_lab_username }}
 
 image:
   registry: Quay
   organization: quayadmin
-  host: {{ gitea_customize_quay_server }}
-  name: customers-{{ gitea_customize_lab_username }}
+  host: {{ code_red_breach_challenge_gitea_customize_quay_server }}
+  name: customers-{{ code_red_breach_challenge_gitea_customize_lab_username }}
   tag: v1
