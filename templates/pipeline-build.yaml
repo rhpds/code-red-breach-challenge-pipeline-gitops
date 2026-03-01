@@ -88,6 +88,9 @@ spec:
       runAfter:
         - git-clone
 {{- end }}
+      params:
+        - name: MAVEN_MIRROR_URL
+          value: http://nexus.nexus.svc.cluster.local:8081/repository/maven-public/
       taskRef:
         kind: Task
         name: maven
