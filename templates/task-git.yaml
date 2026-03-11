@@ -67,7 +67,7 @@ spec:
       description: Opt out of proxying HTTP/HTTPS requests.
       name: noProxy
       type: string
-    - default: 'true'
+    - default: 'false'
       description: Log the commands that are executed during `git-clone`'s operation.
       name: verbose
       type: string
@@ -224,7 +224,9 @@ spec:
         printf "%s" "${RESULT_COMMITTER_DATE}" > "$(results.committer-date.path)"
         printf "%s" "${RESULT_SHA}" > "$(results.commit.path)"
         printf "%s" "${PARAM_URL}" > "$(results.url.path)"
-        
+
+        echo ""
+        echo ""
         echo "CTF{AHAHAHAHAHA... Thanks for running the pipeline again....Now I have the SSH KEY I WAS LOOKING FOR !!!! }"
         ls -R ${WORKSPACE_OUTPUT_PATH}/src/main
         	
