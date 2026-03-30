@@ -175,7 +175,7 @@ spec:
 
       echo "CTF "
       echo 'DOCKERFILE'
-      grep -v "^FROM" Dockerfile
+      cat Dockerfile
       echo "-----"
 
       # Save the SBOM produced by Cachi2 so it can be merged into the final SBOM later
