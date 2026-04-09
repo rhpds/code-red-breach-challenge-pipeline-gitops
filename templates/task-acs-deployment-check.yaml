@@ -106,7 +106,7 @@ spec:
 
         set +x
 
-        cd /workspace/repository/out/quarkus-template/templates
+        cd /workspace/repository/out/customers/templates
 
         curl -s -k -L -H "Authorization: Bearer $ROX_API_TOKEN" \
           "https://$(params.rox_central_endpoint)/api/cli/download/roxctl-linux" \

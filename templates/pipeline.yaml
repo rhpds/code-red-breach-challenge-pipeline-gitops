@@ -2,10 +2,9 @@
 apiVersion: tekton.dev/v1
 kind: Pipeline
 metadata:
-  name: {{ .Values.app.name }}-build
+  name: {{ .Values.app.name }}-pipeline
   labels:
     type: pipeline
-    backstage.io/kubernetes-id: {{ .Values.app.name }}
 spec:
   params:
     - name: source-repo
@@ -252,7 +251,6 @@ spec:
   workspaces:
     - name: source-folder
     - name: maven-settings
-    - name: docker-config
     - name: reports
     - name: sshkey
     - name: maven-local    
